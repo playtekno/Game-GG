@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://lynk.id/static/css/custom.css" />
+  <link rel="stylesheet" href="https://lynk.id/static/css/atomic.css" />
+  <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+  <link rel="icon" href="icon.png" type="image/x-icon" />
+  <title>GAME GOLF GELINDING | GAME-GG</title>
+  <meta name="description" content="Game Golf Gelinding adalah permainan aksi yang bikin frustrasi menggabungkan elemen ketangkasan dan strategi">
+  <meta name="keywords" content="golf gelinding, game golf gelinding, game gg, html game, html canvas game, canvas html game, canvas html5 game, html game canvas, html game code, html canvas tag, games snake game, free games, spider solitaire card games, spider solitaire games, spider solitr, google solitaire, aarp games, free solitaire, freecell card game, freecell games, snow rider 3d, free online games, car games, now gg roblox">
+  <style>
+    /* Navbar Styles */
+    .custom-navbar {
+      background-color: #2ab57d;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-container {
+      max-width: 1024px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+
+    .navbar-brand {
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .navbar-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 24px;
+    }
+
+    .navbar-menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: opacity 0.3s ease;
+    }
+
+    .navbar-menu li a:hover {
+      opacity: 0.8;
+    }
+
+    .burger-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .burger-line {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 3px 0;
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+
+    .burger-menu.active .burger-line:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.active .burger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burger-menu.active .burger-line:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .navbar-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #2ab57d;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      .navbar-menu.active {
+        transform: translateX(0);
+      }
+
+      .burger-menu {
+        display: flex;
+      }
+
+      .navbar-menu li a {
+        font-size: 18px;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        display: block;
+      }
+
+      .navbar-menu li:last-child a {
+        border-bottom: none;
+      }
+    }
+
+    /* Adjust main content for fixed navbar */
+    .main-content {
+      margin-top: 60px;
+    }
+
+    /* Dark mode support for navbar */
+    @media (prefers-color-scheme: dark) {
+      .custom-navbar {
+        background-color: #2ab57d;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Golf Gelinding",
+  "description": "Game Golf Gelinding adalah permainan aksi yang bikin frustrasi menggabungkan elemen ketangkasan dan strategi",
+  "genre": "Sports",
+  "applicationCategory": "Game",
+  "operatingSystem": "Web",
+  "url": "https://www.example.com/golf-gelinding",
+  "image": "splash.png",
+  "author": {
+    "@type": "Organization",
+    "name": "GAME-GG"
+  },
+  "datePublished": "2025-05-19",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.example.com/golf-gelinding",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+</head>
+<body>
+  
+  <!-- Custom Navbar -->
+  <nav class="custom-navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-brand">GAME-GG</a>
+      
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="/">Home</a></li>
+        <li><a href="how-to-play">Cara Bermain</a></li>
+        <li><a href="tentang">Tentang</a></li>
+		<li><a href="disclaimer">Disclaimer</a></li>
+        <li><a href="kebijakan-privasi">Kebijakan Privasi</a></li>
+		<li><a href="ketentuan-layanan">Ketentuan Layanan</a></li>
+		<li><a href="hubungi-kami">Hubungi</a></li>
+		<li><a href="support">Support</a></li>
+      </ul>
+      
+      <button class="burger-menu" id="burgerMenu" onclick="toggleMobileMenu()">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="W(100%) Mih(100vh) Bgr(nr) Bgz(c) main-content" style="background-color: #2AB57D;">
+    <main>
+      <section class="Ta(c) Px(3%) Pb(30px)">
+        <div class="Pt(35px)" style="margin-bottom: 20px;">
+        </div>
+        <div class="Maw(400px) Bgc(#ffffff) Py(32px) Bdrs(6px) Mx(a) Fz(14px)">
+          <div class="Px(16px)">z            
+            <div class="" style="margin-top: -100px;">
+              <img src="how.png" width="150" alt="">
+            </div>
+            <h1 class="Fw(800) Fz(20px) Mt(24px)">CARA BERMAIN <span class="C($green)"></span> GOLF GELINDING</h1>
+<ul>
+<br/><strong>Desktop</strong>: Gunakan tombol panah untuk bergerak ke kiri, kanan, dan melompat.
+<p><strong>Mobile</strong>: Tap layar kanan-kiri-atas untuk menggerakkan bola.</p>
+</ul>
+<br/>Cobalah game golf gelinding sekarang dan tunjukkan keterampilan Anda! Apakah Anda siap untuk tantangan ini? Selamat bermain!</p>
+          </div>      
+          <div class="Mx(20px) Mt(32px)">            
+            <a href="gameplay" class="Ff($l) Fw(700) Bg($c1) D(b) W(100%) Trs($c1) Scale(1.03):h C(#ffffff) Py(15px)  Bdrs(4px)">PLAY GAME</a>                  
+          </div>
+        </div>        
+      </section>
+    </main>
+  </div>
+
+  <!-- Navbar JavaScript -->
+  <script>
+    function toggleMobileMenu() {
+      const navbarMenu = document.getElementById('navbarMenu');
+      const burgerMenu = document.getElementById('burgerMenu');
+      
+      navbarMenu.classList.toggle('active');
+      burgerMenu.classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.navbar-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navbarMenu').classList.remove('active');
+        document.getElementById('burgerMenu').classList.remove('active');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const navbar = document.querySelector('.custom-navbar');
+      if (!navbar.contains(e.target)) {
+        document.getElementById('navbarMenu').classList.remove('active');
+        document.getElementById('burgerMenu').classList.remove('active');
+      }
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCJXJFJXTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JCJXJFJXTK');
+</script> 
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9713a0ac0d809e29',t:'MTc1NTU0MzM0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9713a0ac0d809e29","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"ad502c1d6bbd448e8dd6faf83b76bd4d"}' crossorigin="anonymous"></script>
+</body>
+</html>
